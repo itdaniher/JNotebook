@@ -1,7 +1,6 @@
 load 'socket'
 coinsert 'jsocket'
-
-NB. sdsocket/sdconnect/sdsend/sdrecv/sdclose
+load 'handlebars.ijs'
 
 sconn =: monad : 'sderror sdconnect y'
 ssend =: dyad : 'sderror x sdsend y'
@@ -18,28 +17,29 @@ sock =: 1 {:: sdsocket AF_INET,SOCK_STREAM,0
 
 'returnCode type localIP' =: sdgethostbyname 1 {:: sdgethostname ''
 
+NB. local machine, port 1234 is default
 echo sconn sock;type;localIP;1234
 
 NB. little endian commands, unsigned char followed by a four byte integer
+cmd =: dyad : '((byte x),(int y) ) sdsend sock;0'
 
-le =: monad : '3 ic <. y'
-byte =: monad : '0 { (le y)'
-int =: monad : '(4+(i.4)) { (|. le y)' 
-tune =: monad : '((byte SET_FREQUENCY),(int y) ) sdsend sock;0'
-echo tune 500e6
-sdrecv sock,10,0
-
-NB. get empty
-sdrecv sock,1024,0
-
+SET_FREQUENCY cmd 144.64e6
+SET_SAMPLERATE cmd 1e5
 length =: 1024
-data =: 1{::sdrecv sock,length,0
-boxed =: ;/ data
-b2i =: monad : '0 ic y,byte 0'
-data =: (1 b2i\ data) % 255
-realIndexes =: (2*i.($ i.length)%2)
-imagIndexes =: realIndexes + 1
-data =: ((realIndexes { data)) + 0j1 * imagIndexes { data
+
+NB. get first chunk
+echo sdrecv sock,length,0
+
+getSamples =: monad : 0
+	length =: y
+	bytes =: 1{::sdrecv sock,length,0
+	boxed =: ;/ data
+	data =: ((1 b2i\ bytes) % 127)-1
+	realIndexes =: (2*i.($ i.length)%2)
+	imagIndexes =: realIndexes + 1
+	samples =: ((realIndexes { data)) + 0j1 * imagIndexes { data
+)
+
 load 'plot'
-plot |: data
+plot |: getSamples length
 sdcleanup ''
