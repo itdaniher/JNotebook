@@ -22,16 +22,24 @@ echo sconn sock;type;localIP;1234
 
 NB. little endian commands, unsigned char followed by a four byte integer
 
-le =: monad : '1 ic <. y'
+le =: monad : '3 ic <. y'
 byte =: monad : '0 { (le y)'
-int =: monad : '(i.2) { (le y)'
+int =: monad : '(4+(i.4)) { (|. le y)' 
+tune =: monad : '((byte SET_FREQUENCY),(int y) ) sdsend sock;0'
+echo tune 500e6
+sdrecv sock,10,0
 
-tune =: monad : '((byte SET_FREQUENCY),(int 0),(int y) ) sdsend sock;0'
-echo tune 144.64e6
-load 'handlebars.ijs'
-data =: sdrecv sock,10,0
-echo data
-data =: sdrecv sock,1000,0
-echo data
-NB. echo 3!:3 data
+NB. get empty
+sdrecv sock,1024,0
+
+length =: 1024
+data =: 1{::sdrecv sock,length,0
+boxed =: ;/ data
+b2i =: monad : '0 ic y,byte 0'
+data =: (1 b2i\ data) % 255
+realIndexes =: (2*i.($ i.length)%2)
+imagIndexes =: realIndexes + 1
+data =: ((realIndexes { data)) + 0j1 * imagIndexes { data
+load 'plot'
+plot |: data
 sdcleanup ''
