@@ -38,13 +38,14 @@ normalizeBytes =: monad : 0
 	bytes =: y
 	length =: # bytes
 	assert ((2 | length) = 0)
-	data =: _1 + 1%127%,b2i"1 (length, 1) $ bytes
+	data =: _1 + (a.&i.bytes) % 127 
 	NB. convert an interleaved list of real,imag numbers to a half-length list of complex numbers
 	data =: ((length%2), 2) $ data
 	samples =: +/"1 (1, 0j1) *"1 data
 )
 load 'plot'
-(echo Ts 'samples =: normalizeBytes getBytes length')
+bytes =: getBytes length
+(echo Ts 'samples =: normalizeBytes bytes')
 plot |samples
 load 'math/fftw'
 plot | fftw_z_ samples
