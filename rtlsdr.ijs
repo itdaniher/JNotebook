@@ -20,27 +20,32 @@ assert 'no error' = sconn sock;type;localIP;1234
 NB. little endian commands, unsigned char followed by a four byte integer
 cmd =: dyad : '((byte x),(int y) ) sdsend sock;0'
 
-SET_FREQUENCY cmd 100e6
-SET_SAMPLERATE cmd 400000
-length =: 20000
+SET_FREQUENCY cmd 104e6
+SET_SAMPLERATE cmd 2e6
+length =: 2e6
 
-load 'format.ijs'
 'error name' =: sdrecv sock,length,0
 assert error = 0
 echo name
 
-getSamples =: monad : 0
-	length =: y
-	'error bytes' =: sdrecv sock,length,0
+getBytes =: monad : 0
+	'error bytes' =: sdrecv sock,y,0
 	assert error = 0
-	data =: ((1 b2i\ bytes) % 127)-1
-	length =: # data
-	assert ((2 | length) = 0)
-	realIndexes =: (length) $ (1, 0)
-	imagIndexes =: realIndexes = 0
-	samples =: (realIndexes # data) + (0j1 * imagIndexes # data)
+	] bytes
 )
 
+normalizeBytes =: monad : 0
+	bytes =: y
+	length =: # bytes
+	assert ((2 | length) = 0)
+	data =: _1 + 1%127%,b2i"1 (length, 1) $ bytes
+	NB. convert an interleaved list of real,imag numbers to a half-length list of complex numbers
+	data =: ((length%2), 2) $ data
+	samples =: +/"1 (1, 0j1) *"1 data
+)
 load 'plot'
-plot |: getSamples length
+(echo Ts 'samples =: normalizeBytes getBytes length')
+plot |samples
+load 'math/fftw'
+plot | fftw_z_ samples
 sdcleanup ''
