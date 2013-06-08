@@ -6,6 +6,13 @@ movingAverage =: dyad : '(x$(1%x)) convolve y'
 
 mean =: +/%"1#
 
+noise =: monad : 0
+        'low high count' =: y
+        (high-low)*(? count $ 0) + low
+)
+
+
+
 types =: 'bool';'string';'int';'float';'complex';'ext int';'rational'   
 type  =: > @: ({ & types) @: (1 2 4 8 16 64 128 & i.) @: (3 !: 0)
 

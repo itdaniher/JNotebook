@@ -1,19 +1,6 @@
 load 'plot'
 load 'trig'
-
-mean =: +/%"1#
-
-NB. generate 'count' equally spaced numbers between 'start' and 'end'
-linspace =: 3 : 0
-	'start end count' =: y
-	start+end*(i.count) % count
-)
-
-NB. generate 'count' random numbers between 'low' and 'high'
-noise =: 3 : 0
-	'low high count' =: y
-	(high-low)*(? count $ 0) + low
-)
+load 'handlebars.ijs'
 
 NB. generate vector containing a sine wave having 'periods', with each period having 'sampleRate' samples
 getData =: 3 : 0 
