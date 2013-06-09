@@ -22,17 +22,20 @@ cmd =: dyad : '((byte x),(int y) ) sdsend sock;0'
 
 SET_FREQUENCY cmd 104e6
 SET_SAMPLERATE cmd 2e6
-length =: 2e6
+length =: 1e5
 
 'error name' =: sdrecv sock,length,0
 assert error = 0
 echo name
 
-getBytes =: monad : 0
-	'error bytes' =: sdrecv sock,y,0
+getBytes =: dyad : 0
+	toGet =: x-#y
+	echo toGet
+	'error bytes' =: sdrecv sock,toGet,0
 	assert error = 0
-	] bytes
+	] y,bytes
 )
+
 
 normalizeBytes =: monad : 0
 	bytes =: y
@@ -44,7 +47,9 @@ normalizeBytes =: monad : 0
 	samples =: +/"1 (1, 0j1) *"1 data
 )
 load 'plot'
-bytes =: getBytes length
+checkLength =: dyad : 'x ~: # y'
+bytes =: ] length getBytes^:checkLength^:_ ('','') 
+echo $ bytes
 (echo Ts 'samples =: normalizeBytes bytes')
 plot |samples
 load 'math/fftw'
