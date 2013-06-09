@@ -1,5 +1,6 @@
 deriv =: monad : '-~/ |: (2 +\ y)'
 linspace =: monad : '(0{y)+((1{y-0{y)%(2{y))*(i.(2{y))'
+logspace =: monad : '10^ linspace y'
 convolve =: +//.@:(*/) 
 movingAverage =: dyad : '(x$(1%x)) convolve y'
 
