@@ -49,7 +49,7 @@ normalizeBytes =: monad : 0
 	bytes =: y
 	length =: # bytes
 	assert ((2 | length) = 0)
-	NB. it's super effective!
+	NB. it's super effective! 'a.&i' : find index against character list
 	data =: _1 + (a.&i.bytes) % 127 
 	NB. convert an interleaved list of real,imag numbers to a half-length list of complex numbers
 	data =: ((length%2), 2) $ data
