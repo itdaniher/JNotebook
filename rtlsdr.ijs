@@ -20,13 +20,7 @@ assert 'no error' = sconn sock;type;localIP;1234
 NB. little endian commands, unsigned char followed by a four byte integer
 cmd =: dyad : '((byte x),(int y) ) sdsend sock;0'
 
-
-freq =: 104e6
-SET_FREQUENCY cmd freq
-SET_SAMPLERATE cmd 2e6
-length =: 2*1e4
-
-'error name' =: sdrecv sock,length,0
+'error name' =: sdrecv sock,1e3,0
 assert error = 0
 echo name
 
@@ -55,14 +49,32 @@ normalizeBytes =: monad : 0
 	data =: ((length%2), 2) $ data
 	samples =: +/"1 (1, 0j1) *"1 data
 )
-load 'plot'
 
-bytes =: getBytes length
-(echo Ts 'samples =: normalizeBytes bytes')
 load 'math/fftw'
+
+freq =: 100e6
+sampleRate =: 2e6
+
+SET_SAMPLERATE cmd sampleRate
+
+getFFTd =: dyad : 0
+	freq =: y
+	length =: x
+	echo freq
+	SET_FREQUENCY cmd freq
+	usleep 1e6
+	samples =: normalizeBytes getBytes length
+	fftd =: | fftw_z_ samples
+	freqbins =: (freq+(i.(#fftd))*(sampleRate%#fftd))
+	] freqbins ,. fftd
+)
+
+load 'plot'
 pd 'new'
-fftd =: | fftw_z_ samples
-pd 'ylog 1'
-pd (freq+(i.(#fftd))*(2e6%#fftd));fftd
-pd 'canvas 1000 500'
+NB. baseFreq is offset, number of bins from size of return data, each bin proportional to sampleRate divided by the number of bins
+pd 'type point'
+samples =: |: ,/ 2e4&getFFTd"0 (90e6 + 1e6*i.10)
+echo $ samples
+pd (0{samples);(1{samples)
+pd 'canvas 1100 500'
 sdcleanup ''
