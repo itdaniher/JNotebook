@@ -13,8 +13,8 @@ noise =: monad : 0
 
 
 
-types =: 'bool';'string';'int';'float';'complex';'ext int';'rational'   
-type  =: > @: ({ & types) @: (1 2 4 8 16 64 128 & i.) @: (3 !: 0)
+types =: 'bool';'string';'int';'float';'complex';'boxed';'ext int';'rational'   
+type  =: > @: ({ & types) @: (1 2 4 8 16 32 64 128 & i.) @: (3 !: 0)
 Ts =: 6!:2 , 7!:2@]
 
 
