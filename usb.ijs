@@ -19,11 +19,10 @@ ctrlTransfer =: dyad : 0
 	a.&i. 6 {:: ('control_transfer i * c c s s *c s i',~lusb) cd (dev;(bmRequestType{a.);(bRequest{a.);wValue;wIndex;data;len;1000)
 )
 
-bulkTransfer =: dyad : 0
-	
 NB. int libusb_bulk_transfer (struct libusb_device_handle *dev_handle, unsigned char endpoint, unsigned char *data, int length, int *transferred, unsigned int timeout)
 
 load 'dates'
+
 max31855 =: monad : 0 
 	response =: (16ba0, 0, 0) ctrlTransfer (4 $ '0')
 	ts =: 0 tsrep 6!:0 ''
@@ -32,7 +31,7 @@ max31855 =: monad : 0
 	] ts,temp
 )
 
-data =: |: max31855"0 i.1000
+data =: |: max31855"0 i.100
 tempSeries =: data -"0 (0 { 0 { data),0
 load 'plot'
 plot ;/tempSeries
