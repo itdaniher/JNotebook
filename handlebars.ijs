@@ -11,7 +11,15 @@ noise =: monad : 0
         (high-low)*(? count $ 0) + low
 )
 
+load 'graphics/plot'
 
+plot =: monad : 0
+	samples =. y
+	pd 'new'
+NB.	pd 'type point'
+	pd (0{samples);(1{samples)
+	pd 'canvas 1100 500'
+)
 
 types =: 'bool';'string';'int';'float';'complex';'boxed';'ext int';'rational'   
 type  =: > @: ({ & types) @: (1 2 4 8 16 32 64 128 & i.) @: (3 !: 0)
