@@ -1,0 +1,812 @@
+==5517== Memcheck, a memory error detector
+==5517== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==5517== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==5517== Command: jconsole rtlsdr2.ijs
+==5517== 
+--5517-- Valgrind options:
+==5517== Memcheck, a memory error detector
+==5517== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==5517== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==5517== Command: jconsole rtlsdr2.ijs
+==5517== 
+--5517-- Valgrind options:
+--5517--    -v
+--5517-- Contents of /proc/version:
+--5517--   Linux version 3.9.4-200.fc18.x86_64 (mockbuild@bkernel02) (gcc version 4.7.2 20121109 (Red Hat 4.7.2-8) (GCC) ) #1 SMP Fri May 24 20:10:49 UTC 2013
+--5517-- Arch and hwcaps: AMD64, amd64-sse3-cx16-avx
+--5517--    -v
+--5517-- Contents of /proc/version:
+--5517--   Linux version 3.9.4-200.fc18.x86_64 (mockbuild@bkernel02) (gcc version 4.7.2 20121109 (Red Hat 4.7.2-8) (GCC) ) #1 SMP Fri May 24 20:10:49 UTC 2013
+--5517-- Arch and hwcaps: AMD64, amd64-sse3-cx16-avx
+--5517-- Page sizes: currently 4096, max supported 4096
+--5517-- Valgrind library directory: /usr/lib64/valgrind
+--5517-- Page sizes: currently 4096, max supported 4096
+--5517-- Valgrind library directory: /usr/lib64/valgrind
+--5517-- Reading syms from /home/it/projects/apl/j64-701/bin/jconsole
+--5517-- Reading syms from /home/it/projects/apl/j64-701/bin/jconsole
+--5517-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--5517-- Reading syms from /usr/lib64/valgrind/memcheck-amd64-linux
+--5517--    object doesn't have a dynamic symbol table
+--5517--    object doesn't have a dynamic symbol table
+--5517-- Reading syms from /usr/lib64/ld-2.16.so
+--5517-- Reading syms from /usr/lib64/ld-2.16.so
+--5517-- Scheduler: using generic scheduler lock implementation.
+--5517-- Scheduler: using generic scheduler lock implementation.
+--5517-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+--5517-- Reading suppressions file: /usr/lib64/valgrind/default.supp
+==5517== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-5517-by-it-on-localhost.localdomain
+==5517== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-5517-by-it-on-localhost.localdomain
+==5517== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-5517-by-it-on-localhost.localdomain
+==5517== 
+==5517== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==5517== don't want to do, unless you know exactly what you're doing,
+==5517== or are doing some strange experiment):
+==5517==   /usr/lib64/valgrind/../../bin/vgdb --pid=5517 ...command...
+==5517== 
+==5517== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==5517==   /path/to/gdb jconsole
+==5517== and then give GDB the following command
+==5517==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=5517
+==5517== --pid is optional if only one valgrind process is running
+==5517== 
+==5517== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-5517-by-it-on-localhost.localdomain
+==5517== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-5517-by-it-on-localhost.localdomain
+==5517== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-5517-by-it-on-localhost.localdomain
+==5517== 
+==5517== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==5517== don't want to do, unless you know exactly what you're doing,
+==5517== or are doing some strange experiment):
+==5517==   /usr/lib64/valgrind/../../bin/vgdb --pid=5517 ...command...
+==5517== 
+==5517== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==5517==   /path/to/gdb jconsole
+==5517== and then give GDB the following command
+==5517==   target remote | /usr/lib64/valgrind/../../bin/vgdb --pid=5517
+==5517== --pid is optional if only one valgrind process is running
+==5517== 
+--5517-- REDIR: 0x3408817f90 (strlen) redirected to 0x3806e111 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--5517-- REDIR: 0x3408817f90 (strlen) redirected to 0x3806e111 (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--5517-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--5517-- Reading syms from /usr/lib64/valgrind/vgpreload_core-amd64-linux.so
+--5517-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--5517-- Reading syms from /usr/lib64/valgrind/vgpreload_memcheck-amd64-linux.so
+--5517-- REDIR: 0x3408817e00 (index) redirected to 0x4a08e80 (index)
+--5517-- REDIR: 0x3408817e00 (index) redirected to 0x4a08e80 (index)
+--5517-- REDIR: 0x3408817e80 (strcmp) redirected to 0x4a09e90 (strcmp)
+--5517-- REDIR: 0x3408817e80 (strcmp) redirected to 0x4a09e90 (strcmp)
+--5517-- Reading syms from /usr/lib64/libreadline.so.6.2
+--5517-- Reading syms from /usr/lib64/libreadline.so.6.2
+--5517--    object doesn't have a symbol table
+--5517--    object doesn't have a symbol table
+--5517-- Reading syms from /usr/lib64/libdl-2.16.so
+--5517-- Reading syms from /usr/lib64/libdl-2.16.so
+--5517-- Reading syms from /usr/lib64/libc-2.16.so
+--5517-- Reading syms from /usr/lib64/libc-2.16.so
+--5517-- Reading syms from /usr/lib64/libtinfo.so.5.9
+--5517-- Reading syms from /usr/lib64/libtinfo.so.5.9
+--5517--    object doesn't have a symbol table
+--5517--    object doesn't have a symbol table
+--5517-- REDIR: 0x3408c89e60 (strcasecmp) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c89e60 (strcasecmp) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c861c0 (strnlen) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c861c0 (strnlen) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c8c130 (strncasecmp) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c8c130 (strncasecmp) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c87bb0 (__GI_strrchr) redirected to 0x4a08ca0 (__GI_strrchr)
+--5517-- REDIR: 0x3408c87bb0 (__GI_strrchr) redirected to 0x4a08ca0 (__GI_strrchr)
+--5517-- REDIR: 0x3408c85a30 (strcpy) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c85a30 (strcpy) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c93f40 (__strcpy_sse2_unaligned) redirected to 0x4a09220 (strcpy)
+--5517-- REDIR: 0x3408c93f40 (__strcpy_sse2_unaligned) redirected to 0x4a09220 (strcpy)
+--5517-- REDIR: 0x3408c87b70 (rindex) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c87b70 (rindex) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408d31970 (__strrchr_sse42) redirected to 0x4a08c70 (rindex)
+--5517-- REDIR: 0x3408d31970 (__strrchr_sse42) redirected to 0x4a08c70 (rindex)
+--5517-- REDIR: 0x3408c89cc0 (stpcpy) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c89cc0 (stpcpy) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c95550 (__stpcpy_sse2_unaligned) redirected to 0x4a0af80 (stpcpy)
+--5517-- REDIR: 0x3408c95550 (__stpcpy_sse2_unaligned) redirected to 0x4a0af80 (stpcpy)
+--5517-- REDIR: 0x3408c7f3e0 (malloc) redirected to 0x4a087fa (malloc)
+--5517-- REDIR: 0x3408c7f3e0 (malloc) redirected to 0x4a087fa (malloc)
+--5517-- REDIR: 0x3408c7ffa0 (calloc) redirected to 0x4a06ad9 (calloc)
+--5517-- REDIR: 0x3408c7ffa0 (calloc) redirected to 0x4a06ad9 (calloc)
+--5517-- Reading syms from /home/it/projects/apl/j64-701/bin/libj.so
+--5517-- Reading syms from /home/it/projects/apl/j64-701/bin/libj.so
+--5517-- Reading syms from /usr/lib64/libm-2.16.so
+--5517-- Reading syms from /usr/lib64/libm-2.16.so
+--5517-- REDIR: 0x3408c88c40 (memset) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c88c40 (memset) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c88c80 (__GI_memset) redirected to 0x4a0b410 (memset)
+--5517-- REDIR: 0x3408c88c80 (__GI_memset) redirected to 0x4a0b410 (memset)
+--5517-- REDIR: 0x3408c8e810 (memcpy@@GLIBC_2.14) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c8e810 (memcpy@@GLIBC_2.14) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408d45a60 (__memcpy_ssse3_back) redirected to 0x4a0a1c0 (memcpy@@GLIBC_2.14)
+--5517-- REDIR: 0x3408d45a60 (__memcpy_ssse3_back) redirected to 0x4a0a1c0 (memcpy@@GLIBC_2.14)
+--5517-- REDIR: 0xffffffffff600000 (???) redirected to 0x3806e0f3 (vgPlain_amd64_linux_REDIR_FOR_vgettimeofday)
+--5517-- REDIR: 0xffffffffff600000 (???) redirected to 0x3806e0f3 (vgPlain_amd64_linux_REDIR_FOR_vgettimeofday)
+--5517-- REDIR: 0x3408c86090 (strlen) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c86090 (strlen) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408d606a0 (__strlen_sse2_pminub) redirected to 0x4a091e0 (strlen)
+--5517-- REDIR: 0x3408d606a0 (__strlen_sse2_pminub) redirected to 0x4a091e0 (strlen)
+--5517-- REDIR: 0x3408c844e0 (index) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c844e0 (index) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408d2fb30 (__strchr_sse42) redirected to 0x4a08d40 (index)
+--5517-- REDIR: 0x3408d2fb30 (__strchr_sse42) redirected to 0x4a08d40 (index)
+--5517-- REDIR: 0x3408c88600 (bcmp) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c88600 (bcmp) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408d5afd0 (__memcmp_sse4_1) redirected to 0x4a0aee0 (bcmp)
+--5517-- REDIR: 0x3408d5afd0 (__memcmp_sse4_1) redirected to 0x4a0aee0 (bcmp)
+--5517-- REDIR: 0x3408c882b0 (memchr) redirected to 0x4a09f30 (memchr)
+--5517-- REDIR: 0x3408c882b0 (memchr) redirected to 0x4a09f30 (memchr)
+--5517-- REDIR: 0x3408c7f8d0 (free) redirected to 0x4a0775f (free)
+--5517-- REDIR: 0x3408c7f8d0 (free) redirected to 0x4a0775f (free)
+--5517-- REDIR: 0x3408c860e0 (__GI_strlen) redirected to 0x4a09200 (__GI_strlen)
+--5517-- REDIR: 0x3408c860e0 (__GI_strlen) redirected to 0x4a09200 (__GI_strlen)
+--5517-- REDIR: 0x3408c862e0 (__GI_strncmp) redirected to 0x4a096d0 (__GI_strncmp)
+--5517-- REDIR: 0x3408c862e0 (__GI_strncmp) redirected to 0x4a096d0 (__GI_strncmp)
+--5517-- REDIR: 0x3408c8ff00 (strchrnul) redirected to 0x4a0b960 (strchrnul)
+--5517-- REDIR: 0x3408c8ff00 (strchrnul) redirected to 0x4a0b960 (strchrnul)
+--5517-- REDIR: 0x3408c88a40 (__GI_memmove) redirected to 0x4a0b6c0 (__GI_memmove)
+--5517-- REDIR: 0x3408c88a40 (__GI_memmove) redirected to 0x4a0b6c0 (__GI_memmove)
+--5517-- REDIR: 0x3408c85a70 (__GI_strcpy) redirected to 0x4a092f0 (__GI_strcpy)
+--5517-- REDIR: 0x3408c85a70 (__GI_strcpy) redirected to 0x4a092f0 (__GI_strcpy)
+--5517-- REDIR: 0x3408c845e0 (__GI_strcmp) redirected to 0x4a09e40 (__GI_strcmp)
+--5517-- REDIR: 0x3408c845e0 (__GI_strcmp) redirected to 0x4a09e40 (__GI_strcmp)
+--5517-- REDIR: 0x3408c862a0 (strncmp) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c862a0 (strncmp) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408d30990 (__strncmp_sse42) redirected to 0x4a09660 (strncmp)
+--5517-- REDIR: 0x3408d30990 (__strncmp_sse42) redirected to 0x4a09660 (strncmp)
+--5517-- REDIR: 0x3408c861f0 (__GI_strnlen) redirected to 0x4a091b0 (__GI_strnlen)
+--5517-- REDIR: 0x3408c861f0 (__GI_strnlen) redirected to 0x4a091b0 (__GI_strnlen)
+--5517-- REDIR: 0x3408c845a0 (strcmp) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c845a0 (strcmp) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408d2fbe0 (__strcmp_sse42) redirected to 0x4a09df0 (strcmp)
+--5517-- REDIR: 0x3408d2fbe0 (__strcmp_sse42) redirected to 0x4a09df0 (strcmp)
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x50EC778: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EE975: jtvtrans (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    at 0x50EC778: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EE975: jtvtrans (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50D6026: jtparseas (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50D6026: jtparseas (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50D6B2E: jtparsex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517==    by 0x50D6B2E: jtparsex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x50EC778: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    at 0x50EC778: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EE975: jtvtrans (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EE975: jtvtrans (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50D6026: jtparseas (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517==    by 0x50D6026: jtparseas (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x50EC778: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    at 0x50EC778: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EE975: jtvtrans (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EE975: jtvtrans (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+--5517-- Reading syms from /usr/local/lib/librtlsdr.so.0.0.0
+--5517-- Reading syms from /usr/local/lib/librtlsdr.so.0.0.0
+--5517-- Reading syms from /usr/local/lib/libusb-1.0.so.0.1.0
+--5517-- Reading syms from /usr/local/lib/libusb-1.0.so.0.1.0
+--5517-- Reading syms from /usr/lib64/librt-2.16.so
+--5517-- Reading syms from /usr/lib64/librt-2.16.so
+--5517-- Reading syms from /usr/lib64/libudev.so.1.3.2
+--5517-- Reading syms from /usr/lib64/libudev.so.1.3.2
+--5517--    object doesn't have a symbol table
+--5517--    object doesn't have a symbol table
+--5517-- Reading syms from /usr/lib64/libpthread-2.16.so
+--5517-- Reading syms from /usr/lib64/libpthread-2.16.so
+--5517-- Reading syms from /usr/lib64/libgcc_s-4.7.2-20121109.so.1
+--5517-- Reading syms from /usr/lib64/libgcc_s-4.7.2-20121109.so.1
+--5517--    object doesn't have a symbol table
+--5517--    object doesn't have a symbol table
+--5517-- REDIR: 0x3408c89790 (mempcpy) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c89790 (mempcpy) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c88bf0 (memcpy@GLIBC_2.2.5) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c88bf0 (memcpy@GLIBC_2.2.5) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c9d830 (strstr) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c9d830 (strstr) redirected to 0x480170e (_vgnU_ifunc_wrapper)
+--5517-- REDIR: 0x3408c8fcf0 (__GI___rawmemchr) redirected to 0x4a0b9b0 (__GI___rawmemchr)
+--5517-- REDIR: 0x3408c8fcf0 (__GI___rawmemchr) redirected to 0x4a0b9b0 (__GI___rawmemchr)
+--5517-- REDIR: 0x3408c7f9c0 (realloc) redirected to 0x4a089a5 (realloc)
+--5517-- REDIR: 0x3408c7f9c0 (realloc) redirected to 0x4a089a5 (realloc)
+Found Rafael Micro R820T tuner
+Found Rafael Micro R820T tuner
+==5517== Invalid read of size 4
+==5517==    at 0x68A91DD: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== Invalid read of size 4
+==5517==    at 0x68A91DD: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==  Address 0x656a430 is 16 bytes before a block of size 176 alloc'd
+==5517==    at 0x4A0887C: malloc (vg_replace_malloc.c:270)
+==5517==    by 0x68A8793: rtlsdr_open (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==  Address 0x656a430 is 16 bytes before a block of size 176 alloc'd
+==5517==    at 0x4A0887C: malloc (vg_replace_malloc.c:270)
+==5517==    by 0x68A8793: rtlsdr_open (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x68A922F: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x68A922F: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x68A4EAB: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x68A4EAB: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== Use of uninitialised value of size 8
+==5517==    at 0x6AC014F: libusb_submit_transfer (io.c:1264)
+==5517==    by 0x6AC1B8F: libusb_control_transfer (sync.c:98)
+==5517==    by 0x68A4FEC: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517== Use of uninitialised value of size 8
+==5517==    at 0x6AC014F: libusb_submit_transfer (io.c:1264)
+==5517==    by 0x6AC1B8F: libusb_control_transfer (sync.c:98)
+==5517==    by 0x68A4FEC: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== Invalid read of size 8
+==5517==    at 0x6AC014F: libusb_submit_transfer (io.c:1264)
+==5517==    by 0x6AC1B8F: libusb_control_transfer (sync.c:98)
+==5517==    by 0x68A4FEC: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== Invalid read of size 8
+==5517==    at 0x6AC014F: libusb_submit_transfer (io.c:1264)
+==5517==    by 0x6AC1B8F: libusb_control_transfer (sync.c:98)
+==5517==    by 0x68A4FEC: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==  Address 0x40 is not stack'd, malloc'd or (recently) free'd
+==5517== 
+==5517==  Address 0x40 is not stack'd, malloc'd or (recently) free'd
+==5517== 
+==5517== 
+==5517== Process terminating with default action of signal 11 (SIGSEGV)
+==5517==  Access not within mapped region at address 0x40
+==5517== 
+==5517== Process terminating with default action of signal 11 (SIGSEGV)
+==5517==  Access not within mapped region at address 0x40
+==5517==    at 0x6AC014F: libusb_submit_transfer (io.c:1264)
+==5517==    at 0x6AC014F: libusb_submit_transfer (io.c:1264)
+==5517==    by 0x6AC1B8F: libusb_control_transfer (sync.c:98)
+==5517==    by 0x68A4FEC: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x6AC1B8F: libusb_control_transfer (sync.c:98)
+==5517==    by 0x68A4FEC: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==  If you believe this happened as a result of a stack
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==  If you believe this happened as a result of a stack
+==5517==  overflow in your program's main thread (unlikely but
+==5517==  possible), you can try to increase the size of the
+==5517==  main thread stack using the --main-stacksize= flag.
+==5517==  overflow in your program's main thread (unlikely but
+==5517==  possible), you can try to increase the size of the
+==5517==  main thread stack using the --main-stacksize= flag.
+==5517==  The main thread stack size used in this run was 8388608.
+==5517==  The main thread stack size used in this run was 8388608.
+==5517== 
+==5517== 
+==5517== HEAP SUMMARY:
+==5517==     in use at exit: 15,098,290 bytes in 654 blocks
+==5517==   total heap usage: 3,460 allocs, 2,806 frees, 21,956,073 bytes allocated
+==5517== 
+==5517== HEAP SUMMARY:
+==5517==     in use at exit: 15,098,290 bytes in 654 blocks
+==5517==   total heap usage: 3,460 allocs, 2,806 frees, 21,956,073 bytes allocated
+==5517== 
+==5517== Searching for pointers to 654 not-freed blocks
+==5517== Searching for pointers to 654 not-freed blocks
+==5517== Checked 12,240,696 bytes
+==5517== 
+==5517== Checked 12,240,696 bytes
+==5517== 
+==5517== LEAK SUMMARY:
+==5517==    definitely lost: 48 bytes in 2 blocks
+==5517==    indirectly lost: 0 bytes in 0 blocks
+==5517==      possibly lost: 14,250,264 bytes in 593 blocks
+==5517==    still reachable: 847,978 bytes in 59 blocks
+==5517==         suppressed: 0 bytes in 0 blocks
+==5517== Rerun with --leak-check=full to see details of leaked memory
+==5517== 
+==5517== Use --track-origins=yes to see where uninitialised values come from
+==5517== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 2 from 2)
+==5517== 
+==5517== 1 errors in context 1 of 8:
+==5517== Invalid read of size 8
+==5517== LEAK SUMMARY:
+==5517==    definitely lost: 48 bytes in 2 blocks
+==5517==    indirectly lost: 0 bytes in 0 blocks
+==5517==      possibly lost: 14,250,264 bytes in 593 blocks
+==5517==    still reachable: 847,978 bytes in 59 blocks
+==5517==         suppressed: 0 bytes in 0 blocks
+==5517== Rerun with --leak-check=full to see details of leaked memory
+==5517== 
+==5517== Use --track-origins=yes to see where uninitialised values come from
+==5517== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 2 from 2)
+==5517== 
+==5517== 1 errors in context 1 of 8:
+==5517== Invalid read of size 8
+==5517==    at 0x6AC014F: libusb_submit_transfer (io.c:1264)
+==5517==    by 0x6AC1B8F: libusb_control_transfer (sync.c:98)
+==5517==    at 0x6AC014F: libusb_submit_transfer (io.c:1264)
+==5517==    by 0x6AC1B8F: libusb_control_transfer (sync.c:98)
+==5517==    by 0x68A4FEC: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x68A4FEC: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==  Address 0x40 is not stack'd, malloc'd or (recently) free'd
+==5517== 
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==  Address 0x40 is not stack'd, malloc'd or (recently) free'd
+==5517== 
+==5517== 
+==5517== 1 errors in context 2 of 8:
+==5517== Use of uninitialised value of size 8
+==5517== 
+==5517== 1 errors in context 2 of 8:
+==5517== Use of uninitialised value of size 8
+==5517==    at 0x6AC014F: libusb_submit_transfer (io.c:1264)
+==5517==    at 0x6AC014F: libusb_submit_transfer (io.c:1264)
+==5517==    by 0x6AC1B8F: libusb_control_transfer (sync.c:98)
+==5517==    by 0x68A4FEC: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x6AC1B8F: libusb_control_transfer (sync.c:98)
+==5517==    by 0x68A4FEC: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== 
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== 
+==5517== 1 errors in context 3 of 8:
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517== 1 errors in context 3 of 8:
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x68A4EAB: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    at 0x68A4EAB: rtlsdr_deinit_baseband (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x68A9238: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== 
+==5517== 1 errors in context 4 of 8:
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517== 
+==5517== 
+==5517== 1 errors in context 4 of 8:
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x68A922F: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    at 0x68A922F: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== 
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== 
+==5517== 1 errors in context 5 of 8:
+==5517== Invalid read of size 4
+==5517== 1 errors in context 5 of 8:
+==5517== Invalid read of size 4
+==5517==    at 0x68A91DD: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    at 0x68A91DD: rtlsdr_close (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==  Address 0x656a430 is 16 bytes before a block of size 176 alloc'd
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==  Address 0x656a430 is 16 bytes before a block of size 176 alloc'd
+==5517==    at 0x4A0887C: malloc (vg_replace_malloc.c:270)
+==5517==    at 0x4A0887C: malloc (vg_replace_malloc.c:270)
+==5517==    by 0x68A8793: rtlsdr_open (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x68A8793: rtlsdr_open (in /usr/local/lib/librtlsdr.so.0.0.0)
+==5517==    by 0x52506B3: jtcdexec1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52532BE: jtcd (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50F714B: jtunquote (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== 
+==5517== 1 errors in context 6 of 8:
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== 
+==5517== 1 errors in context 6 of 8:
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x50EC778: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x50EC778: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EE975: jtvtrans (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EE975: jtvtrans (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== 
+==5517== 1 errors in context 7 of 8:
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517== 
+==5517== 1 errors in context 7 of 8:
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x50EC778: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    at 0x50EC778: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EE975: jtvtrans (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EE975: jtvtrans (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50D6026: jtparseas (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== 
+==5517== 1 errors in context 8 of 8:
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    by 0x50D6026: jtparseas (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+==5517== 
+==5517== 1 errors in context 8 of 8:
+==5517== Conditional jump or move depends on uninitialised value(s)
+==5517==    at 0x50EC778: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    at 0x50EC778: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC7CF: jtvfinal (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EE975: jtvtrans (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EE975: jtvtrans (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A43D8: jtdfs2 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC505: jtparse (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EEF03: jtimmex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x52622F8: jtlinf (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50A438E: jtdfs1 (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50EC34E: jtparsea (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50D6026: jtparseas (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50D6B2E: jtparsex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50D6026: jtparseas (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517==    by 0x50D6B2E: jtparsex (in /home/it/projects/apl/j64-701/bin/libj.so)
+==5517== 
+--5517-- 
+--5517-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==5517== 
+--5517-- 
+--5517-- used_suppression:      2 glibc-2.5.x-on-SUSE-10.2-(PPC)-2a
+==5517== 
+==5517== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 2 from 2)
+==5517== 
+==5517== ERROR SUMMARY: 8 errors from 8 contexts (suppressed: 2 from 2)
