@@ -19,10 +19,11 @@ namePtr =: 0{::('get_device_name *s i',~lrtlsdr) cd <0
 name =: memr namePtr,0,_1
 echo name
 
+NB. why is this needed!?
+devPtr =: ". ": devPtr
+
 echo ('set_sample_rate i * i',~lrtlsdr) cd (<devPtr);2e6
 
-NB. results =: ('reset_buffer i *',~lrtlsdr) cd <<devPtr
+results =: ('reset_buffer i *',~lrtlsdr) cd <<devPtr
 
-echo ('close i *',~lrtlsdr) cd <devPtr
-NB. echo 'librtlsdr.so rtlsdr_reset_buffer > i *' cd <devPtr
-
+echo ('close i *',~lrtlsdr) cd <<devPtr
