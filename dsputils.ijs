@@ -24,3 +24,5 @@ lpf =: dyad : 0
 	scaleFactor =: 1%+/filter
 	] scaleFactor*filter
 )
+
+dfft=: 3 : '+/ y * ^ (#y) %~ (- o. 0j2 ) * */~ i.#y'
