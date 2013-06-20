@@ -31,7 +31,10 @@ get =: dyad : 0
 	startString =: '' [ ^:isntString strOrZero start
 	requestURL =: (deviceURL,'/',chan,'/input?resample=0&header=0',startString,'&count=',(":count))
 	csvData =: httpget requestURL
-	(((#data)%2),2) $ data =: ". }: }: (LF,',') charsub csvData
+	selectCleanup =: monad : 'count = 1'
+	cleanRow =: monad : '". }: (LF,'','') charsub y'
+	cleanRows =: monad : '(((#data)%2),2) $ data =: ". }:}: (LF,;'','') charsub y'
+	cleanRows`cleanRow @. selectCleanup csvData
 )
 
 setout =: dyad : 0
@@ -44,7 +47,9 @@ setout =: dyad : 0
 	". ": ; 'startSample' gethash_json response
 )
 
-startSample =: 0{ ('a';'simv')&setout"0 (0, 50)
-data =: 'a' get (startSample , 1000+startSample)
+samples =: ('a';'simv')&setout"0 (i.1000)%20
+echo samples
+data =: 'a'&get"1 samples,.samples+1
+echo $data
 load 'handlebars.ijs'
-plot (startSample + (i.#data)),.data
+plot data
