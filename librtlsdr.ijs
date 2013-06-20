@@ -1,7 +1,5 @@
 load 'dll'
-NB. load 'handlebars.ijs'
 lrtlsdr =: 'librtlsdr.so rtlsdr_'
-load 'graphics/plot'
 devCount =: ;(('get_device_count i',~lrtlsdr) cd '')
 assert 0 = devIndex =: devCount-1
 
@@ -23,22 +21,26 @@ devPtr =: < ". ": devPtr
 NB. housekeeping
 assert 0 = ('reset_buffer > i *',~lrtlsdr) cd <devPtr
 
+samplingRate =: 2.048e6
+
 NB. good compromise
-assert 0 = ('set_sample_rate > i * i',~lrtlsdr) cd devPtr;2e6
+assert 0 = ('set_sample_rate > i * i',~lrtlsdr) cd devPtr;samplingRate
 
 NB. disable manual gain -> enable automatic gain
 assert 0 = ('set_tuner_gain_mode > i * i',~lrtlsdr) cd devPtr;0
 
+CC=: ({.@] <: [)*.([ <: {:@])
+
 NB. tune
 tune =: monad : 0 
-	NB. assert 24e6 < y < 1900e6
+	assert y CC (24e6,1900e6)
 	assert 0 = ('set_center_freq > i * i',~lrtlsdr) cd devPtr;y
 )
 
 xfer =: < mema 4
 0 memw (;xfer),0,1,4
-buffer =: < mema 2e6
-(2e6$0{a.) memw (;buffer),0,2e6,2
+buffer =: < mema samplingRate
+(samplingRate$0{a.) memw (;buffer),0,samplingRate,2
 echo memr (;xfer),0,1,4
 
 getBytes =: monad : 0
@@ -57,6 +59,3 @@ normalizeBytes =: monad : 0
     data =: ((length%2), 2) $ data
     samples =: +/"1 (1, 0j1) *"1 data
 )
-NB. plot normalizeBytes getBytes 512*20
-NB. close
-NB. assert 0 = ('close > i *',~lrtlsdr) cd <devPtr
