@@ -1,6 +1,6 @@
 load 'httpget.ijs'
 load 'convert/json'
-load 'tables/dsv'
+NB. load 'tables/dsv'
 Ver_phttpget_=: '1.1'
 
 baseURL =: 'http://localhost:9003/rest/v1/'
@@ -31,8 +31,7 @@ get =: dyad : 0
 	startString =: '' [ ^:isntString strOrZero start
 	requestURL =: (deviceURL,'/',chan,'/input?resample=0&header=0',startString,'&count=',(":count))
 	csvData =: httpget requestURL
-	NB. unbox and evaluate to return len-2 vector of floats
-	". ; (',' fixdsv csvData)
+	(((#data)%2),2) $ data =: ". }: }: (LF,',') charsub csvData
 )
 
 setout =: dyad : 0
@@ -42,10 +41,10 @@ setout =: dyad : 0
 	requestURL =: deviceURL,'/',chan,'/output'
 	params =: 'wave=arb&mode=',direction,'&repeat=0','&points=0:', (":value) NB., ''''
 	response =: dec_json params httpget requestURL
-	; 'startSample' gethash_json response
+	". ": ; 'startSample' gethash_json response
 )
 
-samples =: ('a';'simv')&setout"0 ((i.1000)%20)
-data =: 'a' get"1 samples,.samples+1
+startSample =: 0{ ('a';'simv')&setout"0 (0, 50)
+data =: 'a' get (startSample , 1000+startSample)
 load 'handlebars.ijs'
-plot |: data
+plot (startSample + (i.#data)),.data
