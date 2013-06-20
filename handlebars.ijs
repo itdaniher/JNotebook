@@ -1,3 +1,6 @@
+load 'trig'
+load 'graphics/plot'
+
 deriv =: monad : '-~/ |: (2 +\ y)'
 linspace =: monad : '(0{y)+((1{y-0{y)%(2{y))*(i.(2{y))'
 logspace =: monad : '10^ linspace y'
@@ -11,13 +14,24 @@ noise =: monad : 0
         (high-low)*(? count $ 0) + low
 )
 
-load 'graphics/plot'
+dcheck =: monad : '_2 + 1 { $ 0,.|:y' 
 
+d1 =: monad : 0
+	echo y
+	pd (i.#y);y
+)
+d2 =: monad : 0
+	pd (0{y);(1{y)
+)
+d3 =: monad : 0
+	pd (0{y);1{y
+	pd 'y2axis'
+	pd (0{y);2{y
+)
 plot =: monad : 0
-	samples =. y
+	samples =: |: y
 	pd 'new'
-NB.	pd 'type point'
-	pd (0{samples);(1{samples)
+	(d1 ` d2 ` d3) @. dcheck samples
 	pd 'canvas 1100 500'
 )
 
