@@ -11,6 +11,20 @@ indices =: (] %~ i.)@: #
 NB. good enough
 hamming=: 0.54 & - @: (0.46 & *)@: cos @: (2p1 & *) @: indices
 
+NB. better
+blackmanharris=: 3 : 0
+   0.355768 0.487396 0.144232 0.012604 blackmanharris y
+:
+  'a0 a1 a2 a3'=. x
+  w=.-(a3&*)@: (2 & o.) @: (6p1 & *) @: indices y
+  w=.w+(a2&*)@: (2 & o.) @: (4p1 & *) @: indices y
+  w=.w-(a1&*)@: (2 & o.) @: (2p1 & *) @: indices y
+  w=. a0+w
+)
+
+NB. 'best'?
+nuttall=: 10r32 15r32 6r32 1r31 & blackmanharris
+
 NB. 0 = x sinc 0
 sinc =: dyad : '(2p1*y) %~ sin x*2p1*y'
 
