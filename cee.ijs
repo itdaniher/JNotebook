@@ -33,8 +33,8 @@ get =: dyad : 0
 	csvData =: httpget requestURL
 	selectCleanup =: monad : 'count = 1'
 	cleanRow =: monad : '". }: (LF,'','') charsub y'
-	cleanRows =: monad : '(((#data)%2),2) $ data =: ". }:}: (LF,;'','') charsub y'
-	cleanRows`cleanRow @. selectCleanup csvData
+	cleanRows =: monad : '(((#data)%2),2) $ data =: cleanRow y'
+	data =: cleanRows`cleanRow @. selectCleanup csvData
 )
 
 setout =: dyad : 0
@@ -42,14 +42,13 @@ setout =: dyad : 0
 	direction =: 1 {:: x
 	value =: 0 { y
 	requestURL =: deviceURL,'/',chan,'/output'
-	params =: 'wave=arb&mode=',direction,'&repeat=0','&points=0:', (":value) NB., ''''
+	params =: 'wave=arb&mode=',direction,'&repeat=0','&points=0:', ('_-' charsub ":value) NB., ''''
 	response =: dec_json params httpget requestURL
 	". ": ; 'startSample' gethash_json response
 )
-
-samples =: ('a';'simv')&setout"0 (i.1000)%20
-echo samples
-data =: 'a'&get"1 samples,.samples+1
-echo $data
+samples =: ('a';'svmi')&setout"0 0,2.5
+a =: 'a'&get"1 samples,.samples+500
+b =: 'b'&get"1 samples,.samples+500
+echo a,b
 load 'handlebars.ijs'
-plot data
+plot (i.#data),.data,.data2
