@@ -21,20 +21,27 @@ ctrlTransfer =: dyad : 0
 
 NB. int libusb_bulk_transfer (struct libusb_device_handle *dev_handle, unsigned char endpoint, unsigned char *data, int length, int *transferred, unsigned int timeout)
 
-load 'dates'
+maxRead =: 1024
 
-max31855 =: monad : 0 
-	response =: (16ba0, 0, 0) ctrlTransfer (4 $ '0')
-	ts =: 0 tsrep 6!:0 ''
-	usleep 1e4
-	temp =: (2^4)%~  +/ (255, 1) *"1 (2,3) { response
-	] ts,temp
+xfer =: < mema 4
+
+buffer =: < mema maxRead
+(maxRead$0{a.) memw (;buffer),0,maxRead,2 
+
+bulkTransferIn =: dyad : 0
+	len =: x
+	echo assert len = 4 {:: ('bulk_transfer i * c *c i *i i',~lusb) cd dev;((16b81{a.));buffer;(len);(xfer);10
+	echo memr (;buffer),0,len,2
 )
 
-data =: |: max31855"0 i.100
-tempSeries =: data -"0 (0 { 0 { data),0
-load 'plot'
-plot ;/tempSeries
-
-('close n *',~lusb) cd <dev
-('exit n *',~lusb) cd <NULL
+bulkTransferOut =: dyad : 0
+	data =: y
+	len =: #data
+	y memw (;buffer),0,(#data),2
+	assert len = 4 {:: ('bulk_transfer i * c *c i *i i',~lusb) cd dev;(1{a.);buffer;(len);(xfer);10
+	
+)
+'' bulkTransferOut 12$(97+i.10){a.
+512 bulkTransferIn ''
+NB. ('close n *',~lusb) cd <dev
+NB. ('exit n *',~lusb) cd <NULL
