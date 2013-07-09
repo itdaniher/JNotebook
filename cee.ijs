@@ -15,11 +15,12 @@ deviceURL =: baseURL,'devices/',serial
 deviceInfo =: dec_json httpget deviceURL
 NB. start
 
-'sampleTime=0.0001&samples=100000' httpget deviceURL,'/configuration'
+sampleTime =: 1%10000
+samplesToStore =: 1%sampleTime
+
+(('sampleTime',":sampleTime),'&samples=',":samplesToStore) httpget deviceURL,'/configuration'
 
 'capture=on' httpget deviceURL
-
-NB. 10ksps, 10 seconds scrollback
 
 get =: dyad : 0
 	'start end' =: y
@@ -46,9 +47,24 @@ setout =: dyad : 0
 	response =: dec_json params httpget requestURL
 	". ": ; 'startSample' gethash_json response
 )
-samples =: ('a';'svmi')&setout"0 0,2.5
-a =: 'a'&get"1 samples,.samples+500
-b =: 'b'&get"1 samples,.samples+500
-echo a,b
+
+load 'math/fftw'
+
+oneSec =: 1%sampleTime
+xpyj =: dyad : 'x+0j1*y'
+logFFT =: monad : '^. |fftw_z_ y'
+
 load 'handlebars.ijs'
-plot (i.#data),.data,.data2
+
+doStuff =: monad : 0
+	start =: ('a';'svmi')&setout y
+	data =: 'a' get (start+oneSec*1),(start+oneSec*2)
+	ffts =: logFFT"1  |: data
+	ffts =: 100 movingAverage"1 ffts
+	ffts =: (;/(i.2%~1+(1{$ffts))) { |: ffts
+	((6j3":y),'.png') plot (i.(0 { $ffts)),.ffts
+)
+
+
+doStuff"0 (2+30%~i.30)
+
